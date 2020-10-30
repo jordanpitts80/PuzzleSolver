@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <style>
+        .body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .alert {
+          background: green;
+          padding: 1rem;
+          border-radius: 5px;
+          color: white;
+          margin: 1rem 0;
+        }
+        .header {
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .form {
+            margin: 3rem;
+            padding: 1rem;
+        }
+        .form-group {
+            padding: 0.5rem 0;
+        }
+        .form-group label {
+            display: block;
+        }
+        .btn {
+            display: block;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border: none;
+            width: 100%;
+        }
+      </style>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Crytarithmetic Puzzle Solver</h2>
+      <small></small>
+    </div>
+    <!-- Form -->
+    <div class="container">
+      <form action="/solve" method="POST">
+        <div class="form-group">
+            <label for="Number One"></label>
+            <input type="text" placeholder="texas+nevada==alaska" name="nm" class="u-full-width"/>
+        </div>
+        <input type="submit" value="BE SURE TO INCLUDE 2 EQUAL SIGNS!" id="calc_btn" class="btn"  />
+        <br />
+        <div class="alert">
+          {{ result }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
